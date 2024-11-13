@@ -14,7 +14,6 @@ on:
         type: boolean
         default: false
 
-env:
 
 jobs:
   test-and-run-flask-app:
