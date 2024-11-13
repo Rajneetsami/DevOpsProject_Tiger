@@ -59,6 +59,7 @@ jobs:
         env:
           FLASK_APP: "app.py"  # Replace with your actual app filename
           FLASK_ENV: development
+          API_KEY: ${{ secrets.API_KEY }} 
         run: |
           nohup python -m flask run --host=0.0.0.0 &
           sleep 5
