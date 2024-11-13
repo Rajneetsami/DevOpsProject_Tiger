@@ -102,7 +102,7 @@ jobs:
           password: ${{ secrets.DOCKER_RAJNEET_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -t ektuhi123/owm_api_rajneet .
+        run: docker build -t ektuhi123/owm_api_rajneet:latest .
 
 
       - name: Push the Docker image
