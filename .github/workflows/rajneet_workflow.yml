@@ -107,3 +107,4 @@ jobs:
 
       - name: Push the Docker image
         run: docker push ektuhi123/owm_api_rajneet:latest
+
