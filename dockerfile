@@ -4,7 +4,7 @@ FROM python:3.11-slim
 # Set environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
-ENV API_KEY=  # Leave it empty, as the value will be injected at runtime
+ENV API_KEY=  
 
 # Install dependencies
 COPY requirements.txt .
