@@ -1,23 +1,22 @@
-# Dockerfile example
+# Use the official Python image from the Docker Hub
 FROM python:3.11-slim
 
-# Set environment variables
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=development
-ENV API_KEY=  
-
-# Install dependencies
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Copy the application code
-COPY . /app
-
-# Set working directory
+ARG API_KEY
+ENV API_KEY=${API_KEY}
+# Set the working directory in the container
 WORKDIR /app
 
-# Expose port 5001 (Flask will run on this port)
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install any dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code into the container
+COPY . .
+
+# Expose port 5001
 EXPOSE 5001
 
-# Command to run Flask app
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5001"]
+# Specify the command to run the application
+CMD ["python", "app.py"]
