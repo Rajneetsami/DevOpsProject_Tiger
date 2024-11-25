@@ -52,7 +52,7 @@ jobs:
         run: |
           nohup python -m flask run --host=0.0.0.0 &
           sleep 5
-          curl --fail http://127.0.0.1:5000 || exit 1
+          curl --fail http://127.0.0.1:5001 || exit 1
 
       - name: Upload Error Log if Available
         if: ${{ github.event.inputs.logErrors == 'true' && failure() }}
