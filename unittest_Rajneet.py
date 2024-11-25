@@ -25,8 +25,8 @@ class TestWeatherAppDataTypes(unittest.TestCase):
             self.assertIsInstance(json_data['sunrise'], str, "'sunrise' should be a string in 'HH:MM:SS' format")
             self.assertIsInstance(json_data['sunset'], str, "'sunset' should be a string in 'HH:MM:SS' format")
             try:
-                datetime.strptime(json_data['sunrise'] '%H:%M:%S')
-                datetime.strptime(json_data['sunset'] '%H:%M:%S')
+                datetime.strptime(json_data['sunrise'], '%H:%M:%S')
+                datetime.strptime(json_data['sunset'], '%H:%M:%S')
             except ValueError:
                 self.fail("Sunrise and sunset should be in 'HH:MM:SS' format")
 
