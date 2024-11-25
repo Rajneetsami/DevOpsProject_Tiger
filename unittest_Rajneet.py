@@ -4,6 +4,7 @@ from app import app
 from datetime import datetime
 
 class TestWeatherAppDataTypes(unittest.TestCase):
+    @classmethod
 
     def setUpClass(cls):
         # Set up a test client for the Flask app
