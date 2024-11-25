@@ -18,7 +18,7 @@ class TestWeatherAppDataTypes(unittest.TestCase):
         if response.status_code == 200:# Check if each field is present and has the correct type
         
             self.assertIsInstance(json_data['location'], str, "'location' should be a string")
-            self.assertIsInstance(json_data['temperature'], (int, float), "'temperature' should be an integer or float"
+            self.assertIsInstance(json_data['temperature'], (int, float), "'temperature' should be an integer or float")
             self.assertIsInstance(json_data['description'], str, "'description' should be a string")
             self.assertIsInstance(json_data['humidity'], int, "'humidity' should be an integer")
             self.assertIsInstance(json_data['wind_speed'], (int, float), "'wind_speed' should be an integer or float")
