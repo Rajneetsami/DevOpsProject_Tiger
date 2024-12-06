@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 LAT = 59.3293
 LON = 18.0686
-
 API_KEY = os.getenv('API_KEY')
 WEATHER_API_URL = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={API_KEY}&units=metric&lang=en"
 
