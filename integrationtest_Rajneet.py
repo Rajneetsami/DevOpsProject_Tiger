@@ -1,4 +1,6 @@
 import os
+import pytest
+import sys
 import requests
 from app import LAT, LON
 from dotenv import load_dotenv
