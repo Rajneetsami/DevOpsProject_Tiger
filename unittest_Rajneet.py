@@ -7,13 +7,13 @@ class TestWeatherAppDataTypes(unittest.TestCase):
     @classmethod
 
     def setUpClass(cls):
-        # Set up a test client for the Flask app
+     
         cls.client = app.test_client()
         app.config['TESTING'] = True
 
 
     def test_update_weather_success_response(self): 
-        # Test the structure and data types in a successful /update_weather response."""
+       
         response = self.client.get('/update_weather')
         json_data = response.get_json()
         
