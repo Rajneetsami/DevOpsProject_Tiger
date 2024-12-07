@@ -3,11 +3,6 @@ name: Test and Build Flask App for OpenWeatherMap
 on:
   workflow_dispatch:
     inputs:
-      runTest:
-        description: 'Run tests (true/false)'
-        required: true
-        type: boolean
-        default: false
       logErrors:
         description: 'Log errors if tests fail (true/false)'
         required: true
@@ -37,11 +32,9 @@ jobs:
           pip install pytest 
 
       - name: Run Unit Tests
-        if: ${{ github.event.inputs.runTest == 'true' }}
         run: pytest unittest_Rajneet.py
         
       - name: Run Integration Tests
-        if: ${{ github.event.inputs.runTest == 'true' }}
         run: pytest integrationtest_Rajneet.py
 
 
@@ -55,7 +48,7 @@ jobs:
 
   build-and-publish-docker-image:
     runs-on: ubuntu-latest
-    needs: test-and-run-flask-app
+    needs: test-OpenWeatherMap
 
     steps:
       - name: Checkout code
