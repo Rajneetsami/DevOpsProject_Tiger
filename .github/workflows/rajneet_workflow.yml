@@ -18,7 +18,7 @@ env:
   API_KEY: ${{ secrets.API_KEY }}
  
 jobs:
-  test-and-run-flask-app:
+  test-OpenWeatherMap:
     runs-on: ubuntu-latest
     
     steps:
